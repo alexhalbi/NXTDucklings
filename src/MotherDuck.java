@@ -2,9 +2,7 @@ import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
 import lejos.nxt.UltrasonicSensor;
 
-
 public class MotherDuck {
-	
 	public static void main(String[] args) {
 		UltrasonicSensor leftS = new UltrasonicSensor(SensorPort.S2);
 		UltrasonicSensor rightS = new UltrasonicSensor(SensorPort.S3);
