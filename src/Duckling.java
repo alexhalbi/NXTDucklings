@@ -17,7 +17,6 @@ public class Duckling {
 		LightSensor ls=new LightSensor(SensorPort.S4);
 		ls.setFloodlight(true);
 		while(true) {
-			//LCD.drawInt(ls.getLightValue(), 0, 0);
 			if(ls.getLightValue()<35) {
 				Motor.A.setSpeed(250);
 				Motor.A.forward();
