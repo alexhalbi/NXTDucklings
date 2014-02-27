@@ -16,12 +16,12 @@ public class MotherDuck {
 	leftS.setFloodlight(true);
 	rightS.setFloodlight(true);
 		while(true) {
-			 if(leftS.getLightValue()-rightS.getLightValue()>5) {
+			 if(leftS.getLightValue()-rightS.getLightValue()>3) {
 				Motor.A.setSpeed(125);
 				Motor.A.backward();
 				Motor.C.setSpeed(250);
 				Motor.C.forward();
-			} else if(rightS.getLightValue()-leftS.getLightValue()>5) {
+			} else if(rightS.getLightValue()-leftS.getLightValue()>3) {
 				Motor.C.setSpeed(250);
 				Motor.A.forward();
 				Motor.C.setSpeed(125);
