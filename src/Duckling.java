@@ -13,7 +13,7 @@ public class Duckling {
 	public static void main(String[] args) {
 		UltrasonicSensor leftS = new UltrasonicSensor(SensorPort.S2);
 		UltrasonicSensor rightS = new UltrasonicSensor(SensorPort.S3);
-		LightSensor ls=new LightSensor(SensorPort.S1);
+		LightSensor ls=new LightSensor(SensorPort.S4);
 		ls.setFloodlight(true);
 		while(true) {
 			if(ls.getLightValue()<30) {
