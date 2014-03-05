@@ -26,8 +26,12 @@ public class MotherDuck {
 				Motor.A.forward();
 				Motor.C.setSpeed(125);
 				Motor.C.backward();
-			}
-			else{
+			} else if(rightS.getLightValue()<45&&leftS.getLightValue()<45) {
+				Motor.C.setSpeed(250);
+				Motor.A.forward();
+				Motor.C.setSpeed(125);
+				Motor.C.backward();
+			} else{
 				Motor.A.setSpeed(250);
 				Motor.A.forward();
 				Motor.C.setSpeed(250);

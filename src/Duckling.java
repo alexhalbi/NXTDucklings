@@ -16,17 +16,17 @@ public class Duckling {
 		LightSensor ls=new LightSensor(SensorPort.S4);
 		ls.setFloodlight(true);
 		while(true) {
-			if(ls.getLightValue()<35) {
+			if(ls.getLightValue()<45) {
 				Motor.A.setSpeed(250);
 				Motor.A.forward();
 				Motor.C.setSpeed(250);
 				Motor.C.backward();
-			} else if(leftS.getDistance()>10&&rightS.getDistance()>10) { //30
+			} else if(leftS.getDistance()>30&&rightS.getDistance()>30) { //30
 				Motor.A.setSpeed(250);
 				Motor.A.forward();
 				Motor.C.setSpeed(250);
 				Motor.C.forward();
-			} else if (leftS.getDistance()<4||rightS.getDistance()<4) {
+			} else if (leftS.getDistance()<8||rightS.getDistance()<8) {
 				Motor.A.stop();
 				Motor.C.stop();
 			} else if(leftS.getDistance()<rightS.getDistance()) {
