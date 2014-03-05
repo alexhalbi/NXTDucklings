@@ -1,3 +1,5 @@
+import lejos.nxt.Button;
+import lejos.nxt.LCD;
 import lejos.nxt.LightSensor;
 import lejos.nxt.Motor;
 import lejos.nxt.SensorPort;
@@ -15,8 +17,8 @@ public class Duckling {
 		UltrasonicSensor rightS = new UltrasonicSensor(SensorPort.S3);
 		LightSensor ls=new LightSensor(SensorPort.S4);
 		ls.setFloodlight(true);
-		while(true) {
-			if(ls.getLightValue()<35) {
+		while(!Button.RIGHT.isDown()) {
+			if(ls.getLightValue()<45) {
 				Motor.A.setSpeed(250);
 				Motor.A.forward();
 				Motor.C.setSpeed(250);
@@ -26,7 +28,8 @@ public class Duckling {
 				Motor.A.forward();
 				Motor.C.setSpeed(250);
 				Motor.C.forward();
-			} else if (leftS.getDistance()<4||rightS.getDistance()<4) {
+			} else if (leftS.getDistance()<6||rightS.getDistance()<6) {
+				LCD.drawString("stop", 1, 1);
 				Motor.A.stop();
 				Motor.C.stop();
 			} else if(leftS.getDistance()<rightS.getDistance()) {
